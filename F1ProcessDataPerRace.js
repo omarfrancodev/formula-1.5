@@ -88,9 +88,6 @@ export function showDataRaceOnHTML(data) {
 
   const ulElement = document.createElement("ul");
 
-  const seasonLi = document.createElement("li");
-  seasonLi.textContent = `Season: ${data.season}`;
-
   const roundLi = document.createElement("li");
   roundLi.textContent = `Round: ${data.raceRound}`;
 
@@ -106,7 +103,6 @@ export function showDataRaceOnHTML(data) {
   const countryLi = document.createElement("li");
   countryLi.textContent = `Country: ${data.raceCountry}`;
 
-  ulElement.appendChild(seasonLi);
   ulElement.appendChild(roundLi);
   ulElement.appendChild(nameLi);
   ulElement.appendChild(circuitLi);
@@ -117,14 +113,14 @@ export function showDataRaceOnHTML(data) {
 
   const headerRow = table.insertRow();
   const headers = [
-    "Position",
-    "Points",
-    "Code Name",
-    "Driver",
-    "Number",
-    "Constructor",
-    "Fastest Lap",
-    "Interval",
+    "POS",
+    "NO",
+    "DRIVER",
+    "TEAM",
+    "LAPS",
+    "INTERVAL",
+    "FASTEST LAP",
+    "PTS",
   ];
   headers.forEach((headerText) => {
     const header = document.createElement("th");
@@ -140,21 +136,13 @@ export function showDataRaceOnHTML(data) {
 
     const row = table.insertRow();
     row.insertCell().textContent = driverData.positionText;
-    row.insertCell().textContent = driverData.points;
-    row.insertCell().textContent = driver.code;
-    row.insertCell().textContent = `${driver.givenName} ${driver.familyName}`;
     row.insertCell().textContent = driver.permanentNumber;
+    row.insertCell().textContent = `${driver.givenName} ${driver.familyName}`;
     row.insertCell().textContent = constructor.name;
-    if (fastestLap?.Time) {
-      row.insertCell().textContent = fastestLap.Time.time;
-    } else {
-      row.insertCell().textContent = "N/A";
-    }
-    if (interval?.time) {
-      row.insertCell().textContent = interval.time;
-    } else {
-      row.insertCell().textContent = driverData.status;
-    }
+    row.insertCell().textContent = driverData.laps;
+    row.insertCell().textContent = interval?.time ? interval.time : driverData.status;
+    row.insertCell().textContent = fastestLap?.Time ? fastestLap.Time.time : "N/A";
+    row.insertCell().textContent = driverData.points;
   });
 
   resultDiv.appendChild(ulElement);
