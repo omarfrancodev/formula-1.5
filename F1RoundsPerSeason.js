@@ -16,32 +16,9 @@ export async function getRoundsAndCircuitsPerSeason(season) {
     const data = await response.json();
 
     if (data.MRData?.total === 0) {
-      return {
-        rounds: 0,
-        circuits: [],
-      };
+      return 0;
     }
-
-    const circuits =
-      data.MRData.RaceTable.Races.reduce(
-        (filteredCircuits, result) => {
-          const existingCircuits = filteredCircuits.find(
-            (c) => c.Circuit.circuitId === result.Circuit.circuitId
-          );
-          if (!existingCircuits) {
-            filteredCircuits.push({
-              Circuit: result.Circuit,
-            });
-          }
-          return filteredCircuits;
-        },
-        []
-      );
-
-    return {
-      rounds: data.MRData.total,
-      circuits: circuits,
-    };
+    return data.MRData.total;
   } catch (error) {
     throw new Error("An unexpected error has occurred " + error);
   }
