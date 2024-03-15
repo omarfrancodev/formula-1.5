@@ -8,7 +8,6 @@ export function updateStandings(data, driverStandings, constructorsStandings) {
     } else {
       driverStandings.push({
         Driver: result.Driver,
-        Position: result.position,
         Car: result.Constructor.name,
         Points: result.points,
       });
@@ -28,24 +27,19 @@ export function updateStandings(data, driverStandings, constructorsStandings) {
       });
     }
   });
-  driverStandings = orderByPoints(driverStandings);
-  constructorsStandings = orderByPoints(constructorsStandings);
 }
 
 function orderByPoints(standings) {
-  return standings.sort((a, b) => {
-    if (b.Points !== a.Points) {
-      return b.Points - a.Points;
-    } else {
-      return a.Position - b.Position;
-    }
-  });
+  return standings.sort((a, b) => b.Points - a.Points);
 }
 
 export async function showStandingsOnHTML(
   driverStandings,
   constructorsStandings
 ) {
+  driverStandings = orderByPoints(driverStandings);
+  constructorsStandings = orderByPoints(constructorsStandings);
+
   createTable("Drivers", driverStandings, true);
   createTable("Constructors", constructorsStandings, false);
 }
