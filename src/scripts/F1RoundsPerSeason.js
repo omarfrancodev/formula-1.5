@@ -8,18 +8,18 @@
  */
 export async function getRoundsAndCircuitsPerSeason(season) {
   try {
-    const url = `https://ergast.com/api/f1/${season}.json`;
-    const response = await fetch(url);
+    const url = `https://ergast.com/api/f1/${season}.json`
+    const response = await fetch(url)
     if (response.status !== 200) {
-      throw new Error("API request failed");
+      throw new Error('API request failed')
     }
-    const data = await response.json();
+    const data = await response.json()
 
     if (data.MRData?.total === 0) {
-      return 0;
+      return 0
     }
-    return data.MRData.total;
+    return data.MRData.total
   } catch (error) {
-    throw new Error("An unexpected error has occurred " + error);
+    throw new Error('An unexpected error has occurred ' + error)
   }
 }

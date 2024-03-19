@@ -7,21 +7,21 @@
  */
 export async function getDriversPerSeason(season) {
   try {
-    const url = `https://ergast.com/api/f1/${season}/drivers.json`;
-    const response = await fetch(url);
+    const url = `https://ergast.com/api/f1/${season}/drivers.json`
+    const response = await fetch(url)
     if (response.status !== 200) {
-      throw new Error("API request failed");
+      throw new Error('API request failed')
     }
-    const data = await response.json();
+    const data = await response.json()
 
     if (!data.MRData?.DriverTable?.Drivers) {
-      return [];
+      return []
     }
 
-    const driverList = data.MRData.DriverTable.Drivers;
+    const driverList = data.MRData.DriverTable.Drivers
 
-    return driverList;
+    return driverList
   } catch (error) {
-    throw new Error("An unexpected error has occurred " + error);
+    throw new Error('An unexpected error has occurred ' + error)
   }
 }
