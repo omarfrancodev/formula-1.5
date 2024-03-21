@@ -1,4 +1,27 @@
-@import '/node_modules/flowbite-vue/dist/index.css';
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: F1-Regular;
+    font-display: auto;
+    src: url('../assets/fonts/Formula1-Regular.woff2') format('woff2');
+    font-weight: auto;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: F1-Bold;
+    font-display: auto;
+    src: url('../assets/fonts/Formula1-Bold.woff2') format('woff2');
+    font-weight: auto;
+    font-style: normal;
+  }
+  @font-face {
+    font-family: F1-Wide;
+    font-display: auto;
+    src: url('../assets/fonts/Formula1-Wide.woff2') format('woff2');
+    font-weight: auto;
+    font-style: normal;
+  }
+}
