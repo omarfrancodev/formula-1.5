@@ -1,24 +1,30 @@
 /** @type {import('tailwindcss').Config} */
+/*eslint-env node*/
 export default {
   content: [
     'index.html',
     'src/**/*.{vue,js,ts,jsx,tsx}',
-    'node_modules/flowbite/**/*.js',
-    'node_modules/flowbite-vue/**/*.{js,jsx,ts,tsx,vue}',
     'node_modules/flowbite/**/*.{js,jsx,ts,tsx}'
   ],
   theme: {
-    colors: {
-      white: '#ffffff',
-      black: '#000000',
-      redF1: '#E10600',
-      secondaryDark: '#1F1F27',
-      main: '#fdefef',
-      footer: '#F9CFCF',
-      tables: '#F0EBF8',
-      mainText: '#171717',
-      textData: '#A09099'
+    extend: {
+      colors: {
+        redf1: '#e10600',
+        darkblue: '#1f1f27',
+        background: '#fdefef',
+        footer: '#f9cfcf',
+        lightblue: '#f0ebf8',
+        darktext: '#171717',
+        lightdata: '#a09099',
+        lightbluetext: '#7883bc'
+      },
+      fontFamily: {
+        titillium: ['Titillium Web', 'sans-serif'],
+        f1reg: ['F1-Regular', 'sans'],
+        f1bold: ['F1-Bold', 'sans'],
+        f1wide: ['F1-Wide', 'sans']
+      }
     }
   },
-  plugins: ['flowbite/plugin']
+  plugins: [require('flowbite/plugin')]
 }
