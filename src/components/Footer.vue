@@ -1,42 +1,21 @@
 <template>
-  <fwb-footer class="bg-custom-color">
-    <fwb-footer-copyright
-      class="text-black-500"
-      by="Donnermar"
-      href="https://github.com/omarfrancodev"
-      copyright-message="I have no Rights LMFAO."
-    />
-    <fwb-p class="custom-text-black"
-      >Data provided by
-      <fwb-a class="custom-text-blue" href="https://ergast.com/mrd/">Ergast.</fwb-a> Unofficial
-      Formula 1 web site and content.</fwb-p
-    >
-  </fwb-footer>
+  <footer class="bg-footer rounded-none space-x-2 bottom-0">
+    <div class="w-full mx-auto max-w-screen-xl p-4 md:flex md:items-center md:justify-between">
+      <span class="text-base text-black sm:text-center"
+        >© 2024 <a href="https://github.com/omarfrancodev" class="hover:underline">Donnermar</a>.
+        This website is not affiliated with F1.
+      </span>
+      <p class="text-black text-base font-titillium pr-4">
+        Data provided by
+        <a class="text-black hover:text-indigo-700" href="https://ergast.com/mrd/">Ergast.</a>
+        Unofficial Formula 1 web site and content.
+      </p>
+    </div>
+  </footer>
 </template>
-
-<script setup>
-import { FwbFooter, FwbFooterCopyright, FwbA, FwbP } from 'flowbite-vue'
-</script>
 
 <script>
 export default {
-  name: 'MainFooter'
+  name: 'FooterComponent'
 }
 </script>
-
-<style scoped>
-.bg-custom-color {
-  background-color: #f9cfcf;
-  margin-bottom: auto;
-}
-
-.custom-text-black {
-  font-family: 'Titillium Web', sans-serif;
-  color: #000000;
-}
-
-.custom-text-blue {
-  font-family: 'Titillium Web', sans-serif;
-  color: #0000ff;
-}
-</style>
