@@ -1,21 +1,24 @@
 <template>
-  <div>Content of the page Home</div>
-  <div id="result"></div>
+  <head>
+    <title>F1.5 - The Unofficial Home of Formula 1.5</title>
+  </head>
+  <div id="result" class="py-10"></div>
 </template>
 
 <script setup>
 import { onMounted } from 'vue'
 import { getRoundsAndCircuitsPerSeason } from '../scripts/F1RoundsPerSeason'
 import { processDataFormula1, showDataRaceOnHTML } from '../scripts/F1ProcessDataPerRace.js'
-import { getDriversPerSeason } from '../scripts/F1DriversData.js'
+// import { getDriversPerSeason } from '../scripts/F1DriversData.js'
 import { updateStandings, showStandingsOnHTML } from '../scripts/F1CalculatedStandings.js'
+
 onMounted(async () => {
   const startTime = performance.now()
 
   const season = 2024
   const rounds = await getRoundsAndCircuitsPerSeason(season)
-  const driversList = await getDriversPerSeason(season)
-  console.log(driversList)
+  // const driversList = await getDriversPerSeason(season)
+  // console.log(driversList)
 
   const excludedDrivers = ['max_verstappen', 'perez']
 
@@ -58,6 +61,6 @@ onMounted(async () => {
 
 <script>
 export default {
-  name: 'MainHome'
+  name: 'HomeView'
 }
 </script>
