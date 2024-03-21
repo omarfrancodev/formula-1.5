@@ -32,9 +32,6 @@ export async function processDataFormula1(season, round, excludedDrivers) {
   if (data === undefined) {
     throw new Error('Failed to retrieve data from getDataFormula1')
   }
-  if (data.MRData.total === 0) {
-    throw new Error('No results found for the specified round')
-  }
   const race = data.MRData.RaceTable.Races[0]
   if (!race) {
     console.error('No race data found')
