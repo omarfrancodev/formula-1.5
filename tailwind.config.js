@@ -15,7 +15,7 @@ export default {
         footer: '#f9cfcf',
         lightblue: '#f0ebf8',
         darktext: '#171717',
-        lightdata: '#a09099',
+        lightdata: '#8c7e85',
         lightbluetext: '#7883bc'
       },
       fontFamily: {
