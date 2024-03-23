@@ -11,7 +11,7 @@ export default {
       colors: {
         redf1: '#e10600',
         darkblue: '#1f1f27',
-        background: '#fdefef',
+        background: '#fdf5f5',
         footer: '#f9cfcf',
         lightblue: '#f0ebf8',
         darktext: '#171717',
