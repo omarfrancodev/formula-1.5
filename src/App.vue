@@ -1,20 +1,23 @@
 <template>
-  <div id="app" class="bg-main">
-    <MainHeader />
+  <div id="app" class="bg-background">
+    <HeaderComponent />
+    <NavBar />
     <router-view />
-    <MainFooter />
+    <FooterComponent />
   </div>
 </template>
 
 <script>
-import MainHeader from './components/Header.vue'
-import MainFooter from './components/Footer.vue'
+import HeaderComponent from './components/Header.vue'
+import NavBar from './components/NavBar.vue'
+import FooterComponent from './components/Footer.vue'
 
 export default {
   name: 'App',
   components: {
-    MainHeader,
-    MainFooter
+    HeaderComponent,
+    NavBar,
+    FooterComponent
   }
 }
 </script>
