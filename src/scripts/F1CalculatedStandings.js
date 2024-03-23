@@ -7,7 +7,6 @@ export function updateStandings(data, driverStandings, constructorsStandings) {
       driverStandings.push({
         driverId: result.Driver.driverId,
         Name: `${result.Driver.givenName} ${result.Driver.familyName}`,
-        Nationality: `${result.Driver.nationality}`,
         Constructor: result.Constructor.name,
         Points: result.points
       })
