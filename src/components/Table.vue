@@ -1,6 +1,5 @@
 <template>
   <div class="py-4 md:py-8 px-0 md:px-6 font-titillium overflow-y-auto bg-white">
-    <p class="pb-3 md:pb-6 px-3 md:px-0 text-black text-sm md:text-base font-f1wide">{{ title }}</p>
     <table
       aria-describedby="table"
       class="w-full bg-white text-left rtl:text-right whitespace-normal"
@@ -46,10 +45,6 @@ export default {
     accessName: {
       type: Array,
       required: false
-    },
-    title: {
-      type: String,
-      required: true
     }
   },
   name: 'TableComponent'
