@@ -31,19 +31,11 @@
       <p class="pt-3 md:pt-6 px-3 md:px-6 text-black text-sm md:text-base font-f1wide">
         {{ titleD }}
       </p>
-      <TableComponent
-        :items="driverStandings"
-        :columns="['Pos', 'Driver', 'Team', 'Pts']"
-        :accessName="['Position', 'Name', 'Constructor', 'Points']"
-      />
+      <TableComponent :items="driverStandings" :columns="['Pos', 'Driver', 'Team', 'Pts']" />
       <p class="pt-3 md:pt-6 px-3 md:px-6 text-black text-sm md:text-base font-f1wide">
         {{ titleC }}
       </p>
-      <TableComponent
-        :items="constructorsStandings"
-        :columns="['Pos', 'Team', 'Pts']"
-        :accessName="['Position', 'Name', 'Points']"
-      />
+      <TableComponent :items="constructorsStandings" :columns="['Pos', 'Constructor', 'Pts']" />
     </div>
   </div>
   <BottomNote id="note" />

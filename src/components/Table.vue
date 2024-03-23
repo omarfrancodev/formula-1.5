@@ -19,10 +19,10 @@
         <tr class="even:bg-lightblue border-b" v-for="(item, index) in items" :key="index">
           <td
             class="px-4 py-4 text-xs md:text-sm font-medium text-darktext whitespace-normal"
-            v-for="(column, idx) in accessName"
+            v-for="(column, idx) in columns"
             :key="idx"
           >
-            <span v-if="column === 'Constructor'" class="text-lightdata">{{ item[column] }}</span>
+            <span v-if="column === 'Team'" class="text-lightdata">{{ item[column] }}</span>
             <span v-else>{{ item[column] }}</span>
           </td>
         </tr>
@@ -41,10 +41,6 @@ export default {
     columns: {
       type: Array,
       required: true
-    },
-    accessName: {
-      type: Array,
-      required: false
     }
   },
   name: 'TableComponent'
